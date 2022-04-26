@@ -1,0 +1,40 @@
+-- Loading resources from main.sql
+
+Listando os cursos
+nome                 
+---------------------
+Direito              
+Ciência da Computação
+
+Listar as disciplinas de cada curso
+nome_curso             nome_disciplina                       
+---------------------  --------------------------------------
+Direito                Introdução ao direito                 
+Direito                Direito Digital                       
+Direito                Direito do Trabalho                   
+Direito                Direito na LGPD                       
+Direito                Ética                                 
+Ciência da Computação  Introdução ao Pensamento Computacional
+Ciência da Computação  Sociedade Digital                     
+Ciência da Computação  Programação JAVA                      
+Ciência da Computação  Banco de Dados                        
+Ciência da Computação  Ética                                 
+
+Exibir o número de disciplinas de cada curso
+nome_curso             numero_disciplinas
+---------------------  ------------------
+Direito                5                 
+Ciência da Computação  5                 
+
+Lista as disciplinas do 1 ano
+nome                                  
+--------------------------------------
+Introdução ao direito                 
+Introdução ao Pensamento Computacional
+
+Listar os cursos que são de 4 anos
+nome                 
+---------------------
+Ciência da Computação
+SQLite version 3.35.5 2021-04-19 18:32:05
+Enter ".help" for usage hints.
