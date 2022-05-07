@@ -4,5 +4,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PUC-CDIA" />
+    <orderEntry type="module" module-name="Downloads" />
   </component>
 </module>
