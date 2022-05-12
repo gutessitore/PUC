@@ -1,0 +1,331 @@
+<html>
+<head>
+<title>Relatório Prova 1.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Relatório Prova 1.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% md 
+</span><span class="s1"># Prova 1 de Banco de Dados 
+ 
+Integrantes do grupo: 
+- Gustavo Tessitore 
+- Isaac Higuchi 
+- Lucas Lopes 
+- João Pedro Taves 
+</span><span class="s0">#%% md 
+</span><span class="s1">### Texto motivador 
+ 
+A Rede 'Viaje Barato' 
+ 
+Um dos grandes problemas que as pessoas que querem viajar e conhecer novos lugares enfrentam são os altos custos cobrados pelas agências 
+de viagem. Além disso, muitas vezes o viajante chega a uma nova cidade e tem como única opção para conhecer os lugares pitorescos tomar 
+um City Tour ou procurar sozinho pelas atrações. O problema dos City Tours é que não se pode ficar em um lugar que se considere 
+agradável, por exemplo, e muitas vezes, não se ficam conhecendo os lugares interessantes que estão fora do 'Circuito Oficial'. Procurar 
+sozinho, por outro lado, acaba fazendo com que o sucesso da viagem dependa muito da sorte do turista. Se a pessoa não falar a língua do 
+País, a situação é ainda pior. 
+ 
+Para resolver esta situação, foi montada a Rede 'Viaje Barato', com o objetivo de proporcionar aos sócios a possibilidade de viajar a 
+custos baixos e ser ciceroneado por habitantes do local visitado, estes também sócios da rede, podendo então conhecer as cidades e países 
+visitados como se estivesse com seus amigos. 
+ 
+Com o grande sucesso da Rede, tornou-se necessário informatizar a operação, e você foi contratado para desenvolver o sistema. 
+A Rede funciona em várias cidades de diversos países do mundo, nos cinco continentes. 
+Em cada cidade operada, a rede tem um ou mais escritórios. 
+ 
+O funcionamento é semelhante ao de um clube. Quando alguém deseja se associar, apresenta-se a um escritório da rede e preenche uma 
+solicitação. Nesta solicitação, além de seus dados pessoais, o solicitante fornece várias informações que serão utilizadas quando o sócio 
+viajar ou receber turistas. São fornecidas as línguas estrangeiras faladas pela pessoa, quantas pessoas pode hospedar em sua casa, quais 
+as suas disponibilidades de horários para ciceronear turistas, que cidades conhece, além da própria, e quais os seus gostos, preferências 
+e conhecimentos turísticos (monumentos históricos, passeios ecológicos, vida noturna, etc.). Uma vez inscrito, o sócio paga uma taxa de 
+inscrição e recebe uma carteirinha. 
+ 
+Quando um sócio deseja realizar uma viagem, ele comparece em um escritório da Rede e é orientado por um funcionário. Este fornece ao 
+sócio quais são as cidades onde existem pessoas que possam ciceroneá-lo, dentro de suas preferências e línguas estrangeiras, na região ou 
+país que o sócio deseja conhecer. Além disso, o sócio também é informado das distâncias, meios de transporte, horários e preços, de modo 
+a poder planejar o roteiro de sua viagem. Passagens aéreas, de ônibus ou trem podem ser compradas pelo sócio com desconto através de 
+Agências de Viagens conveniadas com a Rede. 
+ 
+Caso o sócio prefira ficar em hotel nas cidades visitadas, ao invés de ser hospedado por outro sócio, as reservas também podem ser feitas 
+em hotéis conveniados com a rede. 
+ 
+Tendo confirmado o interesse na viagem, o escritório da rede envia os dados necessários aos escritórios das cidades por onde o sócio 
+passará. De posse destes dados, estes escritórios providenciam os cicerones necessários. Estando tudo correto, os escritórios confirmam a 
+viagem com o escritório original, que então avisa o sócio. 
+ 
+Estando tudo acertado, o sócio paga à rede os valores referentes a passagens e estadia, além de uma taxa de 5% sobre o valor total, de 
+modo a cobrir as despesas da Rede. 
+ 
+Os sócios que receberem e ciceronearem outros sócios receberão, mensalmente, quantias periodicamente revistas, e que dependem da região visitada. Além disso, receberão créditos que lhes permitirão viajar com descontos. 
+ 
+</span><span class="s0">#%% md 
+</span><span class="s1">### 1) identificar os atores do sistema 
+ 
+- Sócios Cicerones: são as pessoas que desejam receber viajantes. 
+- Sócios Viajantes: são as pessoas que desejam viajar. 
+- Colaboradores (funcionários): são os funcionários que trabalham na Rede. 
+ 
+ 
+### 2) listar as ferramentas que serão utilizadas 
+ 
+- Modelo Conceitual: BrModelo 
+- Modelo Lógico: BrModelo 
+- Modelo Físico: BrModelo 
+- Banco de dados: SQLite 
+- Relatório: Jupyter Notebook 
+ 
+ 
+### 3) fazer o modelo conceitual do banco de dados do sistema 
+ 
+![ModeloConceitual.png](attachment:ModeloConceitual.png) 
+ 
+### 4) fazer o modelo lógico do banco de dados do sistema 
+ 
+![ModeloLogico.png](attachment:ModeloLogico.png) 
+ 
+ 
+### 5) fazer o modelo físico do banco de dados do sistema 
+ 
+```sql 
+CREATE TABLE Pessoa( 
+    Endereco TEXT, 
+    data_nascimento DATE, 
+    cpf TEXT, 
+    Nome TEXT, 
+    id_pessoa INT PRIMARY KEY, 
+    id_cidade INT, 
+    FOREIGN KEY (id_cidade) REFERENCES cidade(id_cidade) 
+); 
+CREATE TABLE Funcionario( 
+    id_funcionario INT PRIMARY KEY, 
+    Cargo TEXT, 
+    id_escritorio INT, 
+    id_pessoa INT, 
+    FOREIGN KEY (id_escritorio) REFERENCES Escritório(id_escritorio), 
+    FOREIGN KEY (id_pessoa) REFERENCES Pessoa(id_pessoa) 
+); 
+CREATE TABLE Socio( 
+    disponivel INT, 
+    idiomas TEXT, 
+    cicerone INT, 
+    preferencias TEXT, 
+    id_socio INT PRIMARY KEY, 
+    n_hospedes INT, 
+    id_pessoa INT, 
+    FOREIGN KEY (id_pessoa) REFERENCES Pessoa(id_pessoa) 
+); 
+CREATE TABLE viagem( 
+    data DATE, 
+    tipo_hospedagem TEXT, 
+    id_viagem INT PRIMARY KEY, 
+    id_cidade INT, 
+    id_socio INT, 
+    Atrações TEXT, 
+    FOREIGN KEY (id_cidade) REFERENCES Cidade(id_cidade), 
+    FOREIGN KEY (id_socio) REFERENCES Socio(id_socio) 
+); 
+CREATE TABLE cidade( 
+    id_cidade INT PRIMARY KEY, 
+    nome_cidade TEXT, 
+    nome pais TEXT 
+); 
+CREATE TABLE Escritório( 
+    id_escritorio INT PRIMARY KEY, 
+    id_cidade INT, 
+    nome TEXT, 
+    endereco TEXT, 
+    FOREIGN KEY (id_cidade) REFERENCES Cidade(id_cidade) 
+); 
+``` 
+ 
+ 
+### 6) elaborar 7 questões para fazer para o banco de dados 
+ 
+Quais os cicerones na cidade X? 
+```sql 
+SELECT 
+    pessoa.nome 
+FROM pessoa as pessoa 
+LEFT JOIN socio as socio 
+    ON pessoa.id_pessoa = socio.id_pessoa 
+WHERE 
+    socio.cicerone = 1 
+``` 
+Output: 
+ 
+------------------------------------------------------------------------------------------------------------------------- 
+Sócios que falem português 
+```sql 
+SELECT 
+    pessoa.nome 
+FROM socio as socio 
+LEFT JOIN pessoa as pessoa 
+    ON socio.id_pessoa = pessoa.id_pessoa 
+WHERE 
+    INSTR(socio.idiomas, 'pt-br') 
+``` 
+Output: 
+ 
+------------------------------------------------------------------------------------------------------------------------- 
+Preferencias do sócio X 
+```sql 
+SELECT 
+    preferencias 
+FROM socio 
+WHERE 
+    id_socio = X 
+``` 
+Output: 
+ 
+------------------------------------------------------------------------------------------------------------------------- 
+Viagens realizadas pelo socio X 
+```sql 
+SELECT * 
+FROM viagem 
+WHERE 
+    id_socio = X 
+``` 
+Output: 
+ 
+------------------------------------------------------------------------------------------------------------------------- 
+Dados do sócio X 
+```sql 
+SELECT 
+    pessoa.nome 
+    ,pessoa.cpf 
+    ,pessoa.data_nascimento 
+    ,socio.idiomas 
+    ,socio.cicerone 
+    ,socio.n_hospedes 
+    ,socio.disponivel 
+    ,cidade.nome_cidade 
+    ,cidade.nome_pais 
+FROM pessoa as pessoa 
+LEFT JOIN socio as socio 
+    ON pessoa.id_pessoa = socio.id_pessoa 
+LEFT JOIN cidade as cidade 
+    on pessoa.id_cidade = cidade.id_cidade 
+WHERE 
+    socio.id_socio = X 
+``` 
+Output: 
+ 
+------------------------------------------------------------------------------------------------------------------------- 
+Cidades que possuem Funcionários 
+```sql 
+SELECT 
+    cidade.nome_cidade 
+    ,pessoa.nome 
+FROM funcionario as funcionario 
+LEFT JOIN pessoa as pessoa 
+    ON funcionario.id_pessoa = pessoa.id_pessoa 
+LEFT JOIN cidade as cidade 
+    ON pessoa.id_cidade = cidade.id_cidade 
+``` 
+Output: 
+ 
+------------------------------------------------------------------------------------------------------------------------- 
+Viajantes que ficaram hospedados em hotéis 
+```sql 
+SELECT 
+    pessoa.nome 
+FROM viagem as viagem 
+LEFT JOIN socio as socio 
+    ON viagem.id_socio = socio.id_socio 
+LEFT JOIN pessoa as pessoa 
+    ON pessoa.id_pessoa = socio.id_pessoa 
+``` 
+Output: 
+</span><span class="s0">#%% md 
+</span><span class="s1">Populando as tabelas 
+ 
+Pessoa &lt;br&gt; 
+end, dob, cpf, nome, id_pessoa, id_cidade 
+```sql 
+INSERT INTO pessoa VALUES 
+('R. Cônego Eugênio Leite, 1089 - Pinheiros, São Paulo - SP, 05414-010', '1972-03-10', '103.305.305-39', 'John Smith', 1, 16), 
+('R. da Alfândega, 201 - Brás, São Paulo - SP, 03006-030', '1969-03-29', '390.384.394-83', 'James Willians', 2, 16), 
+('R. Galvão Bueno, 499 - Liberdade, São Paulo - SP, 01506-000', '1999-11-04', '103.492.492-28', 'Adriana Trindade', 3, 16), 
+('R. Monte Alegre, 907 - Perdizes, São Paulo - SP, 05014-001', '2001-05-14', '123.405.304-39', 'Bruno Azevedo', 4, 16), 
+('Parque José Orlando Bernardes - Av. São Félix, 601 - Vista Alegre, Rio de Janeiro - RJ, 21235-615', '2002-11-25', '203.402.483-92', 'Pedro Martins', 5, 17), 
+('Av. Gomes Freire, 284 - Centro, Rio de Janeiro - RJ, 20231-013', '1999-04-01', '302.305.036-93', 'Silvester Stalano', 6, 17), 
+('Rua Formosa, 14, Maceió, AL, 82000-000', '2000-12-26', '103.405.304.53', 'Fernanda Monteclaro', 7, 18), 
+('Rua São Raimundo, 280, Tuntum, MA, 98119-000', '1972-03-10', '304.204.240-40', 'Gustavo Tessitoro', 8, 19), 
+('Rua São Benedito, 90, Ipuiuna, MG, 31363-000', '1967-03-29', '967.043.583-83', 'Peter Pan', 9, 20), 
+('Rua José de Assis Barbosa, 53, Itaperuna, RJ 28300-000', '2003-03-25', '130.303.407-84', 'Mr. Lopes Amorim', 10, 21), 
+('Haji Lane', '1978-05-04', '773.805.421-24', 'John Hankok', 11, 1), 
+('Witte de Withstraat', '1990-07-23', '055.018.040-00', 'Hendrick Van Der Decken', 12, 2), 
+('Rua Rodrigues de Faria', '1985-02-05', '796.556.880-20', 'Cristiano Ronaldo Aveiro', 13, 3), 
+('Passeig de Sant Joan', '1974-05-11', '572.921.360-36', 'Salvador Daqui', 14, 4), 
+('South Bank', '1999-11-14', '277.911.620-08', 'Jack Ripper', 15, 5), 
+('Smith Street', '1979-04-04', '565.479.380-26', 'Heath Ledger', 16, 6), 
+('Flinders Lane', '1980-08-30', '606.228.560-81', 'Ned Flanders', 17, 7), 
+('Cavill Avenue', '1983-12-07', '470.387.560-87', 'Henry Cavill', 18, 8), 
+('Baldwin Street', '1970-01-13', '900.506.780-27', 'Ernest Rutherford', 19, 9), 
+('Queen Street', '2000-06-14', '688.469.630-32', 'Taz Mania', 20, 10), 
+('Al-Mu’izz li-Din Allah', '1998-09-27', '783.315.270-62','Mohamed Salah', 21, 11), 
+('Maboneng', '1975-07-12', '277.010.820-42', 'Didier Dogba', 22, 12), 
+('Ngamiland', '1978-03-23', '788.885.520-22', 'Samuel Eto', 23, 13), 
+('Main Street', '1970-09-13', '001.252.330-51', 'Nelson Mandela', 24, 14), 
+('Semera Afar', '2001-07-18', '523.206.140-28', 'Menelik I', 25, 15); 
+``` 
+ 
+Cidade &lt;br&gt; 
+id_cidade, nome, pais 
+```sql 
+INSERT INTO cidade VALUES 
+(1, 'Kampong glam', 'Singapura'), 
+(2, 'Roterdã', 'Holanda'), 
+(3, 'Coimbra', 'Portugual'), 
+(4, 'Barcelona', 'Espanha'), 
+(5, 'Londres', 'Reino Unido'), 
+(6, 'Melbourne', 'Australia'), 
+(7, 'Springfield', 'Estados Unidos'), 
+(8, 'Gold Coast', 'Australia'), 
+(9, 'Dunedin', 'Nova Zelândia'), 
+(10, 'Tazmania',  'Australia'), 
+(11, 'Cairo', 'Egito'), 
+(12, 'Solitária', 'Namibia'), 
+(13, 'Maun', 'Botswana'), 
+(14, 'Joanesburgo', 'Africa do Sul'), 
+(15, 'Adis Abeba', 'Etiópia'), 
+(16, 'São Paulo', 'Brasil'), 
+(17, 'Rio de Janeiro', 'Brasil'), 
+(18, 'Alagoas', 'Brasil'), 
+(19, 'Maranhão', 'Brasil'), 
+(20, 'Minas Gerais', 'Brasil'), 
+(21, 'Itaperuna', 'Brasil'); 
+``` 
+ 
+Funcionário &lt;br&gt; 
+id_f, cargo, id_esc, id_pessoa 
+```sql 
+INSERT INTO funcionario VALUES 
+(1, 'Gerente', 1, 11), 
+(2, 'Gerente', 2, 10), 
+(3, 'Gerente', 3, 16), 
+(4, 'Gerente', 4, 24), 
+(5, 'Gerente', 5, 15) 
+``` 
+ 
+Escritório &lt;br&gt; 
+id_esc, id_cidade, nome, endereco 
+```sql 
+INSERT INTO escritorio VALUES 
+(1, 1, '2 Pay Pal', 'bayfront Avenuew, Singapura , 10 - 018956'), 
+(2, 21, 'Viagem certa', 'Rua Buarque de Nazare, 192 - Centro, Itaperuna - RJ, 28300000'), 
+(3, 6, 'Super viagens', '131 King street, 3000 Melbourne - Australia'), 
+(4, 14, 'Viaje +', 'Jan smuts ave, 167'), 
+(5, 5, 'Muitos destinos', 'London SW1A 1AA, London UK'); 
+``` 
+</span></pre>
+</body>
+</html>
