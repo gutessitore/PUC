@@ -1,0 +1,87 @@
+Prova P1 Engenharia de Software
+
+
+1)
+	I - Falso
+	II - Verdadeiro
+	III - Verdadeiro ?Uma sequencia pode ter tipos diferentes
+
+	R: 3
+
+2)
+	I - Verdadeiro
+	II - Verdadeiro
+	III - Verdadeiro
+
+	R: 4
+
+3)
+	I - Falso
+	II - Verdadeiro
+	III - Sintaxe errada, porém a lógica está certa
+
+	R: 3
+
+4)
+	I - Falso
+	II - Falso
+	III - Verdadeiro
+	IV - Verdadeiro
+
+	R: 3
+
+5)
+	1. Falso, deveria ser TD, msm que o valor seja o msm
+	2. Falso
+	3. Verdadeiro	
+	4. Falso
+
+	R: 3
+
+
+	O valor armazenado na variável v_c1[3]representa o valor𝑐1(𝑙𝑢𝑔𝑎𝑟−1(𝑇 𝐸)) = 30,considerando-se as sequências𝑙𝑢𝑔𝑎𝑟e𝑐1
+	O valor 30 em v_c1
+
+6)
+	I - Verdadeiro
+	II - Verdadeiro
+	III - Verdadeiro
+
+	R: 4
+
+7)
+
+	I - Verdadeiro
+	II - Verdadeiro
+	III - Verdadeiro
+
+	R: 4
+
+8)
+
+	1. Verdadeiro
+	2. Falso
+	3. Falso, pq o modelo é inconsistente e nao invalido
+	4. Falso	
+
+	R: 1
+
+9)
+
+	1. Falso
+	2. Falso
+	3. Falso
+	4. Verdadeiro
+
+	R: 4
+
+
+10)
+	I - Verdadeiro
+	II - Verdadeiro
+	III - Falso
+	IV - Falso - 0.1 + 0.1 + 0.1 = 0.30000000000004
+
+	https://stackoverflow.com/questions/588004/is-floating-point-math-broken#:~:text=If%20the%20computer%20were%20working,they%20work%20in%20base%202.
+
+	R: 1
