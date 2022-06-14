@@ -1,6 +1,6 @@
 /* LogicoFifa: */
 
-CREATE TABLE jogador (
+CREATE TABLE player (
     sofifa_id INTEGER PRIMARY KEY,
     player_url VARCHAR,
     short_name VARCHAR,
@@ -91,6 +91,7 @@ CREATE TABLE jogador (
     rcb VARCHAR,
     rb VARCHAR,
     gk VARCHAR,
+    nationality_name VARCHAR,
     fk_club_club_team_id INTEGER
 );
 
