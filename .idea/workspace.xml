@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e744febc-95ef-41c1-bb34-b1ea9e2ea9ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab2_Mineracao 2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab1_Mineracao.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab1_Mineracao.ipynb" afterDir="false" />
+    <list default="true" id="e744febc-95ef-41c1-bb34-b1ea9e2ea9ff" name="Changes" comment="Mineração de dados atv 2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab2_Mineracao 2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab2_Mineracao 2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projeto Integrado/Métricas de Desempenho/s03-métricas-de-desempenho-classificação-prática.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto Integrado/Métricas de Desempenho/s03-métricas-de-desempenho-classificação-prática.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/gustavo/Desktop/PUC",
+    "last_opened_file_path": "/home/gustavo/looqbox/dynamic-response-package",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,8 +50,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660337815741</updated>
-      <workItem from="1660337816982" duration="669000" />
+      <workItem from="1660337816982" duration="1316000" />
     </task>
+    <task id="LOCAL-00001" summary="Mineração de dados atv 2">
+      <created>1660338511521</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660338511521</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,5 +78,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Mineração de dados atv 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mineração de dados atv 2" />
   </component>
 </project>
