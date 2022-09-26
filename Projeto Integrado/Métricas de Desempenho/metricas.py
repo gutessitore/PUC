@@ -53,6 +53,11 @@ def r2(y: list, y_pred: list):
     return 1 - sum([(y[i] - y_pred[i]) ** 2 for i in range(len(y))]) / sum([(y[i] - y_mean) ** 2 for i in range(len(y))])
 
 
+def variancia(l):
+    media = sum(l) / len(l)
+    return sum([(x - media) ** 2 for x in l]) / len(l)
+
+
 def mediana(l):
     half = len(l) // 2
     l.sort()
