@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e744febc-95ef-41c1-bb34-b1ea9e2ea9ff" name="Changes" comment="Mineração de dados atv 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab2_Mineracao 2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab2_Mineracao 2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto Integrado/Métricas de Desempenho/s03-métricas-de-desempenho-classificação-prática.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto Integrado/Métricas de Desempenho/s03-métricas-de-desempenho-classificação-prática.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab7_Mineracao.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab7_Mineracao.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PySpark/Analisando as Palavras mais Recorrentes de um Livro.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/PySpark/Analisando as Palavras mais Recorrentes de um Livro.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1660337815741</updated>
       <workItem from="1660337816982" duration="1316000" />
+      <workItem from="1663586745074" duration="2173000" />
     </task>
     <task id="LOCAL-00001" summary="Mineração de dados atv 2">
       <created>1660338511521</created>
