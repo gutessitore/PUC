@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>svm.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+svm.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% md 
+</span><span class="s1"># Aplicando SVM 
+ 
+Treine um classificador SVM com o dataset anexo. 
+Este dataset contém as transações feitas por uma operadora de cartão de créditos. 
+Existem 492 fraudes de um total de mais de 280 mil transações. 
+ 
+O atributo 'Amount' é o valor da transação. 
+As colunas V1, V2, V3 ... representam as componentes principais do dataset original. 
+O atributo a ser previsto está na coluna Class. 
+O valor 1 representa uma transação fraudulenta e o valor 0, uma transação legítima. 
+</span><span class="s0">#%% 
+</span><span class="s2">from </span><span class="s1">sklearn.metrics </span><span class="s2">import </span><span class="s1">confusion_matrix</span><span class="s2">, </span><span class="s1">f1_score</span><span class="s2">, </span><span class="s1">recall_score</span><span class="s2">, </span><span class="s1">precision_score</span><span class="s2">, </span><span class="s1">ConfusionMatrixDisplay</span>
+<span class="s2">from </span><span class="s1">sklearn.model_selection </span><span class="s2">import </span><span class="s1">train_test_split</span>
+<span class="s2">from </span><span class="s1">imblearn.under_sampling </span><span class="s2">import </span><span class="s1">RandomUnderSampler</span>
+<span class="s2">from </span><span class="s1">sklearn.model_selection </span><span class="s2">import </span><span class="s1">GridSearchCV</span>
+<span class="s2">from </span><span class="s1">sklearn.preprocessing </span><span class="s2">import </span><span class="s1">MinMaxScaler</span>
+<span class="s2">from </span><span class="s1">sklearn.decomposition </span><span class="s2">import </span><span class="s1">PCA</span>
+<span class="s2">from </span><span class="s1">sklearn </span><span class="s2">import </span><span class="s1">svm</span>
+<span class="s2">import </span><span class="s1">pandas </span><span class="s2">as </span><span class="s1">pd</span>
+<span class="s0">#%% 
+</span><span class="s1">data = pd.read_csv(</span><span class="s3">&quot;creditcard.csv&quot;</span><span class="s1">)</span>
+<span class="s1">data</span>
+<span class="s0">#%% 
+# procurando por valores nulos</span>
+<span class="s1">n_null = data.isnull().sum().sum()</span>
+<span class="s1">not_fraud</span><span class="s2">, </span><span class="s1">fraud = data.Class.value_counts()</span>
+
+<span class="s1">print(</span><span class="s3">f&quot;valores nulos: </span><span class="s2">{</span><span class="s1">n_null</span><span class="s2">}\n</span><span class="s3">Fraudes: </span><span class="s2">{</span><span class="s1">fraud</span><span class="s2">}\n</span><span class="s3">Não fraudes: </span><span class="s2">{</span><span class="s1">not_fraud</span><span class="s2">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+<span class="s1">data.dtypes</span>
+<span class="s0">#%% 
+</span><span class="s1">target = data.Class</span>
+<span class="s1">features = data.drop(</span><span class="s3">&quot;Class&quot;</span><span class="s2">, </span><span class="s1">axis=</span><span class="s4">1</span><span class="s1">)</span>
+
+<span class="s0"># Dividindo os dados em treinamento e teste</span>
+<span class="s1">features_train</span><span class="s2">, </span><span class="s1">features_test</span><span class="s2">, </span><span class="s1">target_train</span><span class="s2">, </span><span class="s1">target_test = train_test_split(features</span><span class="s2">, </span><span class="s1">target</span><span class="s2">, </span><span class="s1">test_size=</span><span class="s4">0.2</span><span class="s2">, </span><span class="s1">random_state=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s0">#%% 
+</span><span class="s2">for </span><span class="s1">feature_to_scale </span><span class="s2">in </span><span class="s1">features_train:</span>
+    <span class="s1">scaler = MinMaxScaler()</span>
+    <span class="s1">features_train[feature_to_scale] = scaler.fit_transform(features_train[[feature_to_scale]])</span>
+
+<span class="s0"># O resultado não foi bom</span>
+<span class="s0"># # Aplicando PCA</span>
+<span class="s0"># pca = PCA(n_components=0.99)</span>
+<span class="s0"># features_train_pca = pca.fit_transform(features_train)</span>
+<span class="s0"># components = features_train_pca.shape[1]</span>
+<span class="s0">#</span>
+<span class="s0"># features_train_pca</span>
+<span class="s0">#%% 
+# Realizando o under sampling para balancear os dados</span>
+
+<span class="s1">ros = RandomUnderSampler()</span>
+<span class="s1">features_train_res</span><span class="s2">, </span><span class="s1">target_train_res = ros.fit_resample(features_train</span><span class="s2">, </span><span class="s1">target_train)</span>
+
+<span class="s1">target_train_res.value_counts()</span>
+<span class="s0">#%% 
+</span><span class="s1">svm_model = svm.SVC(random_state=</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">svm_model.fit(features_train_res</span><span class="s2">, </span><span class="s1">target_train_res);</span>
+<span class="s0">#%% 
+# Normalizando os dados de teste</span>
+
+<span class="s2">for </span><span class="s1">feature_to_scale </span><span class="s2">in </span><span class="s1">features_test:</span>
+    <span class="s1">scaler = MinMaxScaler()</span>
+    <span class="s1">features_test[feature_to_scale] = scaler.fit_transform(features_test[[feature_to_scale]])</span>
+
+<span class="s0"># # Aplicando PCA</span>
+<span class="s0"># pca = PCA(n_components=components)</span>
+<span class="s0"># features_test_pca = pca.fit_transform(features_test)</span>
+<span class="s0">#%% 
+# Avaliando o modelo</span>
+<span class="s2">def </span><span class="s1">evaluate_classifier(model</span><span class="s2">, </span><span class="s1">features</span><span class="s2">, </span><span class="s1">target</span><span class="s2">, </span><span class="s1">pos_label=</span><span class="s4">1</span><span class="s1">):</span>
+    <span class="s1">predictions = model.predict(features)</span>
+    <span class="s1">accuracy = model.score(features</span><span class="s2">, </span><span class="s1">target)</span>
+    <span class="s1">precision = precision_score(target</span><span class="s2">, </span><span class="s1">predictions</span><span class="s2">, </span><span class="s1">pos_label=pos_label)</span>
+    <span class="s1">recall = recall_score(target</span><span class="s2">, </span><span class="s1">predictions</span><span class="s2">, </span><span class="s1">pos_label=pos_label)</span>
+    <span class="s1">f1 = f1_score(target</span><span class="s2">, </span><span class="s1">predictions</span><span class="s2">, </span><span class="s1">pos_label=pos_label)</span>
+    <span class="s1">conf_matrix = confusion_matrix(target</span><span class="s2">, </span><span class="s1">predictions)</span>
+    <span class="s1">ConfusionMatrixDisplay(conf_matrix</span><span class="s2">, </span><span class="s1">display_labels=model.classes_).plot(cmap=</span><span class="s3">'Blues'</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s3">f'Accuracy: </span><span class="s2">{</span><span class="s1">accuracy</span><span class="s2">:</span><span class="s3">.4</span><span class="s2">}\n</span><span class="s3">Precision: </span><span class="s2">{</span><span class="s1">precision</span><span class="s2">:</span><span class="s3">.4</span><span class="s2">}\n</span><span class="s3">Recall: </span><span class="s2">{</span><span class="s1">recall</span><span class="s2">:</span><span class="s3">.4</span><span class="s2">}\n</span><span class="s3">F1: </span><span class="s2">{</span><span class="s1">f1</span><span class="s2">:</span><span class="s3">.4</span><span class="s2">}</span><span class="s3">'</span><span class="s1">)</span>
+
+
+<span class="s1">evaluate_classifier(svm_model</span><span class="s2">, </span><span class="s1">features_test</span><span class="s2">, </span><span class="s1">target_test)</span>
+<span class="s0">#%% 
+</span><span class="s1">svm_params = {</span>
+    <span class="s3">'kernel'</span><span class="s1">: [</span><span class="s3">'linear'</span><span class="s2">, </span><span class="s3">'poly'</span><span class="s2">, </span><span class="s3">'rbf'</span><span class="s2">, </span><span class="s3">'sigmoid'</span><span class="s1">]</span><span class="s2">,</span>
+    <span class="s0"># 'degree': [1, 2, 3, 4, 5],</span>
+    <span class="s3">'gamma'</span><span class="s1">: [</span><span class="s3">'scale'</span><span class="s2">, </span><span class="s3">'auto'</span><span class="s1">]</span><span class="s2">,</span>
+    <span class="s3">'shrinking'</span><span class="s1">: [</span><span class="s2">True, False</span><span class="s1">]</span><span class="s2">,</span>
+    <span class="s3">'decision_function_shape'</span><span class="s1">: [</span><span class="s3">'ovo'</span><span class="s2">, </span><span class="s3">'ovr'</span><span class="s1">]</span>
+<span class="s1">}</span>
+
+<span class="s1">svm_cv = svm.SVC()</span>
+<span class="s1">svm_grid = GridSearchCV(svm_cv</span><span class="s2">, </span><span class="s1">svm_params</span><span class="s2">, </span><span class="s1">cv=</span><span class="s4">5</span><span class="s2">, </span><span class="s1">n_jobs=-</span><span class="s4">1</span><span class="s1">)</span>
+
+<span class="s1">svm_grid.fit(features_train</span><span class="s2">, </span><span class="s1">target_train)</span>
+
+<span class="s1">print(</span><span class="s3">f'Best score: </span><span class="s2">{</span><span class="s1">svm_grid.best_score_</span><span class="s2">:</span><span class="s3">.4</span><span class="s2">}</span><span class="s3">'</span><span class="s1">)</span>
+<span class="s1">svm_grid.best_params_</span>
+<span class="s0">#%% 
+</span><span class="s1">pd.DataFrame(svm_grid.cv_results_)</span>
+<span class="s0">#%% 
+</span><span class="s1">best_svm = svm.SVC(decision_function_shape=</span><span class="s3">'ovo'</span><span class="s2">, </span><span class="s1">gamma=</span><span class="s3">'scale'</span><span class="s2">, </span><span class="s1">kernel=</span><span class="s3">'poly'</span><span class="s2">, </span><span class="s1">shrinking=</span><span class="s2">True</span><span class="s1">)</span>
+<span class="s1">best_svm.fit(features_train</span><span class="s2">, </span><span class="s1">target_train)</span>
+<span class="s1">evaluate_classifier(best_svm</span><span class="s2">, </span><span class="s1">features_test</span><span class="s2">, </span><span class="s1">target_test)</span></pre>
+</body>
+</html>

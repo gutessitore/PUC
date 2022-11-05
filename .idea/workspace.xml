@@ -5,14 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e744febc-95ef-41c1-bb34-b1ea9e2ea9ff" name="Changes" comment="Mineração de dados atv 2">
+      <change afterPath="$PROJECT_DIR$/Projeto Integrado/SVM/.ipynb_checkpoints/svm-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projeto Integrado/SVM/creditcard.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projeto Integrado/SVM/svm.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projeto Integrado/notebooks/.ipynb_checkpoints/PCA-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projeto Integrado/notebooks/PCA.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PUC-CDIA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PUC-CDIA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab7_Mineracao.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Mineração de Dados/Atividades/Lab7_Mineracao.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PySpark/Analisando as Palavras mais Recorrentes de um Livro.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/PySpark/Analisando as Palavras mais Recorrentes de um Livro.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mineração de Dados/Projetos/Projeto 1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Mineração de Dados/Projetos/Projeto 1.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,20 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/gustavo/looqbox/dynamic-response-package",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/gustavo/Desktop/PUC&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1660337815741</updated>
       <workItem from="1660337816982" duration="1316000" />
-      <workItem from="1663586745074" duration="2173000" />
+      <workItem from="1667566643078" duration="1724000" />
+      <workItem from="1667607024138" duration="1555000" />
     </task>
     <task id="LOCAL-00001" summary="Mineração de dados atv 2">
       <created>1660338511521</created>
