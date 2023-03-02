@@ -1,0 +1,80 @@
+Objetivo da Competição
+O desafio nesse Hackathon é responder a pergunta a seguir:
+
+De que maneiras a PUC-SP poderia utilizar modelos de inteligência artificial criados a partir dos datasets do ENEM para
+aprimorar seus processos educacionais e melhorar o ensino e a aprendizagem?
+
+Os dados do exame são disponibilizados publicamente, mas pouco aproveitado por universidades em geral.
+Seu modelo treinado deve ser capaz de prever o desempenho de um aluno com base em suas características
+socioeconômicas e educacionais. As notas do ENEM são utilizadas para selecionar candidatos para ingresso em
+universidades e institutos federais de ensino superior no Brasil.
+
+Contexto
+O Exame Nacional do Ensino Médio (ENEM) é a maior prova educacional do Brasil, aplicada anualmente para milhões de
+estudantes que buscam ingressar em universidades e institutos federais de ensino superior. Além de avaliar o desempenho
+dos estudantes, a prova também é utilizada como uma ferramenta de política educacional, pois as notas obtidas pelos
+alunos são utilizadas para a distribuição de bolsas de estudos e outros programas governamentais.
+
+Nesta competição, você terá acesso a um grande conjunto de dados do ENEM, incluindo informações demográficas dos
+candidatos, dados socioeconômicos e informações sobre as provas realizadas. Seu desafio é desenvolver modelos precisos
+que possam prever as notas dos estudantes com base nessas informações.
+
+Ao participar desta competição, você estará ajudando a melhorar o acesso à educação de qualidade para todos os
+brasileiros. Seu trabalho poderá ajudar a tornar o processo de seleção mais justo e transparente, permitindo que mais
+pessoas tenham a oportunidade de ingressar em instituições de ensino superior e alcançar seus objetivos pessoais e
+profissionais. Além disso, você estará contribuindo para o desenvolvimento da educação e para o progresso do
+país como um todo.
+
+Observação: Não é permitido tentar realizar qualquer tipo de engenharia reversa nos datasets originais que são públicos
+a fim de obter vantagens nos resultados (ex. overfitting nas respostas corretas). É permitido o uso de bases externas
+para enriquecer as análises e modelos.
+
+
+O que iremos avaliar?
+Na criação de modelos em Machine Learning, é importante entender que não existe uma solução única ou universal que seja
+adequada para todos os cenários. O processo de criação de um modelo de aprendizado de máquina envolve a escolha de
+algoritmos, técnicas e abordagens apropriadas para cada problema específico. Diferentes modelos podem produzir
+resultados diferentes, e a escolha do melhor modelo para um determinado problema pode depender de diversos fatores,
+como o tipo e a quantidade de dados disponíveis, as características do problema a ser resolvido, e as restrições
+computacionais e de recursos. É importante ter em mente que a criação de modelos em Machine Learning é um processo
+iterativo, em que diferentes modelos são testados e ajustados com base em feedbacks e resultados obtidos, até que se
+obtenha um modelo que seja eficaz e adequado para o problema em questão.
+
+Os critérios da avaliação são:
+
+Desempenho do Modelo
+Para avaliar o desempenho do modelo e sua técnica, vamos observar como ele é capaz de prever o desempenho dos
+estudantes. Isto incluirá uma análise da acurácia das previsões e da combinação técnica que você escolheu. Além disso,
+as estratégias escaláveis para problemas reais serão valorizadas e receberão uma avaliação melhor;
+
+Criatividade da Solução
+Em relação à criatividade da solução, iremos avaliar como você combinou diferentes elementos para otimizar os
+resultados. Isso incluirá uma análise da originalidade e da eficácia das ideias apresentadas, bem como da qualidade do
+design da solução;
+
+A qualidade do pitch do grupo
+Finalmente, estaremos avaliando suas habilidades de comunicação e apresentação. Isto incluirá uma avaliação de seu
+estilo de apresentação e comunicação, bem como da clareza e da eficácia com que você comunica seus resultados e ideias.
+Esperamos ver uma apresentação bem estruturada e fácil de seguir, com gráficos e visualizações de dados atraentes e
+informativos.
+
+
+Descrição do Dataset
+O conjunto de dados utilizado será os microdados do Exame Nacional do Ensino Médio (ENEM) 2020, que inclui informações
+sobre mais de 5 milhões de estudantes brasileiros que realizaram o exame naquele ano.
+
+Os dados incluem informações sobre as características socioeconômicas e educacionais dos estudantes, além das notas em
+cada uma das áreas avaliadas no exame;
+
+O conjunto de dados sofreu algumas adaptações para essa competição, como por exemplo a limpeza de informações faltantes
+e o sorteio de instâncias.
+
+Este desafio requer não apenas habilidades em machine learning, mas também em pré-processamento de dados e análise
+exploratória, uma vez que o conjunto de dados é amplo e diverso. Além disso, a criatividade e o pensamento fora da caixa
+fazem parte da avaliação dos resultados finais.
+
+Arquivos
+train.csv - Conjunto de dados de treinamento
+test.csv - Conjunto de dados de teste
+sample_submission.csv - um exemplo de arquivo no formato correto para envio
+Dicionário_Microdados_Enem_2020.xlsx - metadados
