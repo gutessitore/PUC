@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from contextlib import closing
 
+
 class BlogPostScraper:
 
     def __init__(self, base_url, num_pages):
