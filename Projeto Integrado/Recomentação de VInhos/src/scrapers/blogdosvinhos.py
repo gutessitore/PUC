@@ -1,11 +1,11 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from contextlib import closing
+from selenium.webdriver.support.ui import WebDriverWait
+
+from base_scraper import BaseScraper
 
 
-class BlogPostScraper:
+class BlogPostScraper(BaseScraper):
 
     def __init__(self, base_url, num_pages):
         self.base_url = base_url
@@ -28,14 +28,6 @@ class BlogPostScraper:
             post_content = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'inner-post-entry')))
             self.contents.append(post_content.text)
 
-    def save_contents_to_file(self, filename):
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write('\n\n'.join(self.contents))
-
-    def scrape(self):
-        with closing(webdriver.Chrome()) as self.driver:
-            self.collect_post_links()
-            self.collect_post_contents()
 
 # Uso da classe
 scraper = BlogPostScraper('https://blogdosvinhos.com.br/category/harmonizacao/', num_pages=5)
