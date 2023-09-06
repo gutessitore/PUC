@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e744febc-95ef-41c1-bb34-b1ea9e2ea9ff" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/Hackaton/Previsão de Desempenho no ENEM/data/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackaton/Previsão de Desempenho no ENEM/data/train.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrappers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrappers/blogdosvinhos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrappers/info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/.ipynb_checkpoints/atividade-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Distancia.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Escalonamento exercicio1.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Escalonamento exercicio2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Escalonamento exercicio3.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Escalonamento exercicio4.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Escalonamento exercicio5.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Escalonamento exercicio6.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Exemplos de Escalonamento.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/LIsta Escalonamento - Copia.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/Paises.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Consultoria CD/Aula 6/atividade.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sistemas Distribuidos/Lab1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Sistemas Distribuidos/Lab1.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jupyter Notebook" />
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -62,6 +67,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gugat\Documents\PUC\Consultoria CD" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -107,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681165133126</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update">
+      <created>1694001614206</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694001614206</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +135,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -143,8 +172,13 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PUC$blogdosvinhos.coverage" NAME="blogdosvinhos Coverage Results" MODIFIED="1685018547432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrappers" />
+    <SUITE FILE_PATH="coverage/PUC$blogdosvinhos.coverage" NAME="blogdosvinhos Coverage Results" MODIFIED="1685967783515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrapers" />
+    <SUITE FILE_PATH="coverage/PUC$instagram.coverage" NAME="instagram Coverage Results" MODIFIED="1685967576823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrapers" />
+    <SUITE FILE_PATH="coverage/PUC$vinhosemsegredo.coverage" NAME="vinhosemsegredo Coverage Results" MODIFIED="1685892842282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrappers" />
+    <SUITE FILE_PATH="coverage/PUC$word_analisys.coverage" NAME="word_analisys Coverage Results" MODIFIED="1685835377706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projeto Integrado/Recomentação de VInhos/src/scrappers" />
+    <SUITE FILE_PATH="coverage/PUC$TriesWithFrequencies.coverage" NAME="TriesWithFrequencies Coverage Results" MODIFIED="1685829886075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python310/Lib/site-packages/TriesWithFrequencies" />
     <SUITE FILE_PATH="coverage/PUC$Doctests_in_Multiplicação_de_matrizes.coverage" NAME="Doctests in Multiplicação de matrizes Coverage Results" MODIFIED="1680827612179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sistemas Distribuidos" />
     <SUITE FILE_PATH="coverage/PUC$Multiplicação_de_matrizes.coverage" NAME="Multiplicação de matrizes Coverage Results" MODIFIED="1680806788294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sistemas Distribuidos" />
+    <SUITE FILE_PATH="coverage/PUC$ativiadade2.coverage" NAME="ativiadade2 Coverage Results" MODIFIED="1686784858581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Sistemas Distribuidos" />
   </component>
 </project>
