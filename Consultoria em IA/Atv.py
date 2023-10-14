@@ -55,35 +55,34 @@ class Node:
         self.value = value
         self.children = []
 
+
 def get_tree(formula):
-    # Se a formula for atômica, retorne um nó com essa formula
 
-    formula = formula.replace(" ", "")
-
-    if is_wff(formula) and len(formula) == 1:
-        return Node(formula)
-
-    # Se a formula começa com uma negação, crie um nó para a negação e um nó filho para o resto da formula
-    if formula[0] in ['¬', '~']:
-        node = Node(formula[0])
+    list_op = ["∧", "∨", "≡", "⊃"]
+    if formula[0] == '¬':
+        node = Node('¬')
         node.children.append(get_tree(formula[1:]))
         return node
-
-    # Encontre a posição do conectivo principal
-    operator_position = find_operator_position(formula)
-
-    # Crie um nó para o conectivo principal
-    node = Node(formula[operator_position])
-
-    # Divida a formula em subfórmulas e chame a função recursivamente para cada uma
-    left_subformula = formula[1:operator_position]
-    right_subformula = formula[operator_position + 1:-1]
-
-    node.children.append(get_tree(left_subformula))
-    node.children.append(get_tree(right_subformula))
-
-    return node
-
+    else:
+        count = 1
+        index = -1
+        for i in range(1, len(formula) - 1):
+            if formula[i] in list_op and count == 1:
+                index = i
+                break
+            elif formula[i] == '(':
+                count += 1
+            elif formula[i] == ')':
+                count -= 1
+        # print(index)
+        if index >= 0:
+            node = Node(formula[index])
+            node.children.append(get_tree(formula[1:index]))
+            node.children.append(get_tree(formula[index + 1:-1]))
+        else:
+            node = Node(formula)
+            print(formula)
+        return node
 
 # Teste inicial
 test_formula = "((P ∨ (R ∧ ¬S)) ∨ ¬(Q ∧ ¬P))"
